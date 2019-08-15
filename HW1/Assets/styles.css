@@ -1,0 +1,21 @@
+﻿.formLabel {
+    font-weight: 900;
+    font-size: 64;
+    margin-top: 48;
+}
+
+
+.formEntry {
+    border-radius: 16;
+    margin-bottom: 24;
+    height: 48;
+    border-color: #B8C4DC;
+}
+
+.loginButton {
+    background-color: #3D55E8;
+    color: white;
+    font-weight: 900;
+    font-size: 32;
+    height: 64;
+}

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="HW1.MainPage">
+    <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="white">
+        
+        <StackLayout Orientation="Vertical"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Margin="20,0,20,0"
+                     >
+            <Image Source="Welcome" HorizontalOptions="Center" VerticalOptions="Start" />
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="FillAndExpand">
+                <Entry x:Name="usernameEntry"
+                       Placeholder="Username"
+                       WidthRequest="100"
+                       StyleClass="formEntry"
+                       Margin="0,0,0,24"/>
+                <Entry x:Name="passwordEntry"
+                       IsPassword="True"
+                       Placeholder="Password"
+                       WidthRequest="100"
+                       StyleClass="formEntry"/>
+                <Button Text="Login"
+                        WidthRequest="100"
+                        Clicked="LoginClicked"
+                        StyleClass="loginButton"
+                        FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
