@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MVVMBindingNavx.MainPage">
+    <ContentPage.Resources>
+        <!--Page level resource-->
+        <ResourceDictionary>
+            <Style x:Key="buttonRedStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="red" />
+                <Setter Property="Text"
+                        Value="Red" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand"
+                     Margin="10,0,10,0">
+            <!-- Place new controls here -->
+            <Entry Placeholder="Enter something!"
+                   x:Name="entryColor"
+                   Text="{Binding LabelEntry}" />
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="buttonGreenStyle"
+                               TargetType="Button">
+                            <Setter Property="BackgroundColor"
+                                    Value="green" />
+                            <Setter Property="Text"
+                                    Value="Green" />
+                            <Setter Property="HorizontalOptions"
+                                    Value="FillAndExpand" />
+                            <Setter Property="TextColor"
+                                    Value="White" />
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                <Button Style="{StaticResource buttonBlueStyle}"
+                        x:Name="blueColor"
+                        Clicked="OnButtonClicked" />
+                <Button Style="{StaticResource buttonRedStyle}"
+                        x:Name="redColor"
+                        Clicked="OnButtonClicked" />
+                <Button Style="{StaticResource buttonGreenStyle}"
+                        x:Name="greenColor"
+                        Clicked="OnButtonClicked" />
+            </StackLayout>
+            <Label Text="{Binding LabelEntry, Mode=OneWay}"
+                   x:Name="entryLabel" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

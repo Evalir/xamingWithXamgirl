@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MVVMBindingNavx.App"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <!--This app implements data binding with a ViewModel.-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonBlueStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="blue" />
+                <Setter Property="Text"
+                        Value="Blue" />
+                <Setter Property="TextColor"
+                        Value="White" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
