@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Extra1.ExercisePage"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
+    Title="Your Logo"
+    BackgroundImageSource="https://i.pinimg.com/originals/9d/16/60/9d1660c1d5e9610c60cbdb99080b420a.jpg">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Info"
+                     Order="Primary"
+                     Text="?"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   BorderColor="White"
+                   HasShadow="False"
+                   BackgroundColor="transparent">
+                <Label
+                    Text="Here you can place your own image"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    BackgroundColor="transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+            </Frame>
+            <Frame CornerRadius="8"
+                   x:Name="fBox"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="25,0,0,0">
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <Image Source="ic_cloud" />
+                    <Label Text="Weather" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="8"
+                   x:Name="sBox"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   Margin="25,0,0,0">
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <Image Source="ic_people" />
+                    <Label Text="Crew" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="8"
+                   x:Name="tBox"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Margin="0,0,25,0">
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <Image Source="ic_location_on" />
+                    <Label Text="Location" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="8"
+                   x:Name="foBox"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Margin="0,0,25,0">
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <Image Source="ic_radio" />
+                    <Label Text="Radio" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
