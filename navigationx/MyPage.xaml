@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="navigationx.MyPage">
+    <ScrollView>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,10,0">
+            <!-- Place new controls here -->
+            <Entry Placeholder="Enter something!" x:Name="entryColor" TextChanged="OnEntryChange"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button HorizontalOptions="FillAndExpand" BackgroundColor="blue" Text="Blue" x:Name="blueColor" Clicked="OnButtonClicked"/>
+                <Button HorizontalOptions="FillAndExpand" BackgroundColor="Red" Text="Red" x:Name="redColor" Clicked="OnButtonClicked"/>
+                <Button HorizontalOptions="FillAndExpand" BackgroundColor="green" Text="Green" x:Name="greenColor" Clicked="OnButtonClicked"/>
+            </StackLayout>
+            <Label Text="" x:Name="entryLabel"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
