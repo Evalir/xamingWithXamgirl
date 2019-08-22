@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Extra2.MainPage">
+    <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Source="https://o.aolcdn.com/images/dims3/GLOB/crop/2063x1353+1+570/resize/1028x675!/format/jpg/quality/85/https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-images%2F2019-07%2F0990ecc0-b23e-11e9-b3d9-edcf534c3626"
+                   Grid.Row="0"
+                   Aspect="AspectFill"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand" />
+            <Frame BackgroundColor="White"
+                   BorderColor="#D6D9E1"
+                   CornerRadius="8"
+                   Grid.Row="1"
+                   Margin="10,-100,10,0"
+                   MinimumHeightRequest="200"
+                   HasShadow="False">
+                <StackLayout>
+                    <Label Text="Fancy Hotel"
+                           FontSize="Title"
+                           FontAttributes="Bold"
+                           TextColor="#45546B" />
+                    <Label Text="7 May 2019 | 4:26"
+                           FontSize="Small"
+                           TextColor="#616F82" />
+                    <Label Text="Mt Carmel Pl, New York, NY"
+                           FontSize="Small"
+                           TextColor="#616F82" />
+                    <FlexLayout Direction="Row"
+                                AlignItems="Start"
+                                Wrap="Wrap"
+                                JustifyContent="Start">
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Hostel"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Hotel"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Parking"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Restaurant"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Room"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Spa"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                        <Frame Style="{StaticResource Tag}">
+                            <Label Text="Restaurant"
+                                   Style="{StaticResource TagText}" />
+                        </Frame>
+                    </FlexLayout>
+                    <BoxView HorizontalOptions="FillAndExpand"
+                             HeightRequest="1"
+                             BackgroundColor="#D6D9E1"
+                             Margin="2,8,2,8" />
+                    <Label Text="Fancy Hotel"
+                           FontSize="Title"
+                           FontAttributes="Bold"
+                           TextColor="#45546B" />
+                    <Label TextColor="#616F82"
+                           x:Name="paragraphLabel"
+                           LineBreakMode="WordWrap" />
+
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

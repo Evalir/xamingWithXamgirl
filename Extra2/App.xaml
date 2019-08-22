@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Extra2.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Tag"
+                   TargetType="Frame">
+                <Setter Property="MinimumWidthRequest"
+                        Value="30" />
+                <Setter Property="Padding"
+                        Value="8,8,8,8" />
+                <Setter Property="CornerRadius"
+                        Value="15" />
+                <Setter Property="BorderColor"
+                        Value="#B8C4DC" />
+                <Setter Property="HasShadow"
+                        Value="False" />
+                <Setter Property="Margin" Value="0,4,4,0"/>
+            </Style>
+            <Style x:Key="TagText"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Small" />
+                <Setter Property="TextColor"
+                        Value="#616F82" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
