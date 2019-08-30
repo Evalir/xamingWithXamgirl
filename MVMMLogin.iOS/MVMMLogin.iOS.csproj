@@ -122,6 +122,10 @@
     <ImageAsset Include="Assets.xcassets\bookmarks.imageset\bookmarks.png" />
     <ImageAsset Include="Assets.xcassets\bookmarks.imageset\bookmarks-1.png" />
     <ImageAsset Include="Assets.xcassets\bookmarks.imageset\bookmarks-2.png" />
+    <ImageAsset Include="Assets.xcassets\intec.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\intec.imageset\intec.jpg" />
+    <ImageAsset Include="Assets.xcassets\intec.imageset\intec-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\intec.imageset\intec-2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -146,5 +150,6 @@
     <Folder Include="Assets.xcassets\home.imageset\" />
     <Folder Include="Assets.xcassets\info.imageset\" />
     <Folder Include="Assets.xcassets\bookmarks.imageset\" />
+    <Folder Include="Assets.xcassets\intec.imageset\" />
   </ItemGroup>
 </Project>

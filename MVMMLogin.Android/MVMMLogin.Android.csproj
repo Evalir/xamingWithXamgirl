@@ -141,6 +141,22 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\intec.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\intec.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\intec.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\intec.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

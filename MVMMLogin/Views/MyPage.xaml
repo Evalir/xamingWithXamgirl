@@ -9,6 +9,7 @@
         <StackLayout Margin="10,0,10,0"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="CenterAndExpand">
+            <Image Source="intec.jpg"/>
             <!-- Place new controls here -->
             <Entry Placeholder="Username"
                    Text="{Binding User.Username, Mode=TwoWay}"
