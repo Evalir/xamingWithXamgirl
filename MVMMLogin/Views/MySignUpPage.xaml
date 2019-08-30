@@ -9,6 +9,7 @@
                          VerticalOptions="CenterAndExpand">
                 <!-- Place new controls here -->
                 <Entry Placeholder="Email"
+                       Keyboard="Email"
                        Text="{Binding User.Email, Mode=TwoWay}"
                        HorizontalOptions="FillAndExpand" />
                 <Entry Placeholder="Username"
