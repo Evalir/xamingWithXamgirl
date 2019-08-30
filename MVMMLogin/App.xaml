@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MVMMLogin.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="errorLabelStyle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="Red" />
+                <Setter Property="HorizontalOptions"
+                        Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="mainButtonStyle"
+                   TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="White" />
+                <Setter Property="BackgroundColor"
+                        Value="Red" />
+                <Setter Property="CornerRadius"
+                        Value="8" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="secondaryButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="#C1C4CC" />
+                <Setter Property="TextColor"
+                        Value="Black" />
+                <Setter Property="BorderColor"
+                        Value="#C1C4CC" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="CornerRadius"
+                        Value="8" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

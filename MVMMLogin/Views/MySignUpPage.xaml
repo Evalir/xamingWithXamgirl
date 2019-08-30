@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVMMLogin.Views.MySignUpPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10,0,10,0"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <!-- Place new controls here -->
+                <Entry Placeholder="Email"
+                       Text="{Binding User.Email, Mode=TwoWay}"
+                       HorizontalOptions="FillAndExpand" />
+                <Entry Placeholder="Username"
+                       Text="{Binding User.Username, Mode=TwoWay}"
+                       HorizontalOptions="FillAndExpand" />
+                <Entry Placeholder="Password"
+                       IsPassword="True"
+                       Text="{Binding User.Password, Mode=TwoWay}"
+                       HorizontalOptions="FillAndExpand" />
+                <Entry Placeholder="Password"
+                       IsPassword="True"
+                       Text="{Binding PasswordVerifier, Mode=TwoWay}"
+                       HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding SignupErrors}"
+                       Style="{StaticResource errorLabelStyle}" />
+                <Button Text="Register"
+                        Style="{StaticResource mainButtonStyle}"
+                        Command="{Binding RegisterCommand}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

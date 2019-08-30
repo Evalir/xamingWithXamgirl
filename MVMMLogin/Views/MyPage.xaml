@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MVMMLogin.Views.MyPage">
+    <ScrollView>
+        <StackLayout Margin="10,0,10,0"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <!-- Place new controls here -->
+            <Entry Placeholder="Username"
+                   Text="{Binding User.Username, Mode=TwoWay}"
+                   HorizontalOptions="FillAndExpand" />
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   Text="{Binding User.Password, Mode=TwoWay}"
+                   HorizontalOptions="FillAndExpand" />
+            <Label Text="{Binding LoginErrors}"
+                   Style="{StaticResource errorLabelStyle}" />
+            <Button Text="Login"
+                    Style="{StaticResource mainButtonStyle}"
+                    Command="{Binding LogInCommand}" />
+            <Button Text="Register"
+                    Style="{StaticResource secondaryButtonStyle}"
+                    Command="{Binding RegisterCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
