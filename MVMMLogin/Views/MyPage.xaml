@@ -4,28 +4,35 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MVMMLogin.Views.MyPage">
+             x:Class="MVMMLogin.Views.MyPage"
+             Visual="Material">
     <ScrollView>
         <StackLayout Margin="10,0,10,0"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="CenterAndExpand">
-            <Image Source="intec.jpg"/>
+            <Image Source="intec.jpg" />
             <!-- Place new controls here -->
             <Entry Placeholder="Username"
+                   Visual="Material"
                    Text="{Binding User.Username, Mode=TwoWay}"
-                   HorizontalOptions="FillAndExpand" />
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="White" />
             <Entry Placeholder="Password"
                    IsPassword="True"
                    Text="{Binding User.Password, Mode=TwoWay}"
-                   HorizontalOptions="FillAndExpand" />
+                   HorizontalOptions="FillAndExpand"
+                   Visual="Material"
+                   BackgroundColor="White" />
             <Label Text="{Binding LoginErrors}"
                    Style="{StaticResource errorLabelStyle}" />
             <Button Text="Login"
                     Style="{StaticResource mainButtonStyle}"
-                    Command="{Binding LogInCommand}" />
+                    Command="{Binding LogInCommand}"
+                    Visual="Material" />
             <Button Text="Register"
                     Style="{StaticResource secondaryButtonStyle}"
-                    Command="{Binding RegisterCommand}" />
+                    Command="{Binding RegisterCommand}"
+                    Visual="Material" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

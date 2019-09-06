@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Input;
 using MVMMLogin.Models;
 using Xamarin.Forms;
@@ -31,9 +32,24 @@ namespace MVMMLogin.Views
                 }
                 else
                 {
-                    // Dirty trick to remove login page from view, not good?
-                    App.Current.MainPage = new NavigationPage(new MyTabbedPage());
-                    await App.Current.MainPage.Navigation.PopToRootAsync(true);
+                    bool signUpSuccessful = await App.Database.LoginUserAsync(User.Username, User.Password);
+                    if (signUpSuccessful)
+                    {
+                        var foundUser = await App.Database.GetUserAsync(User.Username, User.Password);
+                        App.CurrentUser = foundUser;
+                        Debug.WriteLine($"Set user to {App.CurrentUser.Email}");
+                        App.Current.MainPage = new NavigationPage(new ContactsPage())
+                        {
+                            BarBackgroundColor = Color.FromHex("#C6C6C6"),
+                            BarTextColor = Color.Black
+                            
+                        };
+                        await App.Current.MainPage.Navigation.PopToRootAsync(true);
+                    }
+                    else
+                    {
+                        LoginErrors = "Check your credentials!";
+                    }
                 }
             });
 

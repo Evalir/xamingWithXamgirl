@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace MVMMLogin.iOS
 {
@@ -22,7 +23,9 @@ namespace MVMMLogin.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
+            FormsMaterial.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

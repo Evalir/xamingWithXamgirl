@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVMMLogin.Views.NewContactPage"
+             xmlns:Behaviors="clr-namespace:MVMMLogin.Behaviors"
+             Title="Create Contact"
+             BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Command="{Binding SaveCommand}"/>
+        <ToolbarItem IconImageSource="more_vert.png" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             BackgroundColor="#DBDCE0"
+                             MinimumHeightRequest="64">
+                    <Label Text="Save to "
+                           TextColor="#505155"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           Margin="4,0,0,0" />
+                    <Frame CornerRadius="28"
+                           BorderColor="White"
+                           BackgroundColor="White"
+                           HasShadow="false"
+                           Margin="0, 8, 0, 8"
+                           Padding="8,8,8,8">
+                        <Label TextColor="#505155"
+                               Text="enriqueortizpi@gmail.com"
+                               FontAttributes="Bold"
+                               MinimumHeightRequest="100" />
+                    </Frame>
+                </StackLayout>
+                <Image Source="{Binding ProfilePicture}"
+                       WidthRequest="64"
+                       HeightRequest="64"
+                       HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChoosePictureCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <!--Labels-->
+                <Grid Margin="4,2,4,2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="48" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="person.png"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           WidthRequest="32"
+                           HeightRequest="32" />
+                    <Entry Placeholder="First Name"
+                           Style="{StaticResource contactLabelStyle}"
+                           Text="{Binding Contact.Name, Mode=TwoWay}"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="2,2,2,2" />
+                    <Image Source="down.png"
+                           Grid.Row="0"
+                           Grid.Column="2"
+                           WidthRequest="32"
+                           HeightRequest="32" />
+                    <Entry Placeholder="Last Name"
+                           Text="{Binding Contact.LastName, Mode=TwoWay}"
+                           Style="{StaticResource contactLabelStyle}"
+                           Margin="2,2,2,8"
+                           Grid.Row="1"
+                           Grid.Column="1" />
+                    <Image Source="business.png"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           WidthRequest="32"
+                           HeightRequest="32" />
+                    <Entry Placeholder="Company"
+                           Text="{Binding Contact.Company, Mode=TwoWay}"
+                           Style="{StaticResource contactLabelStyle}"
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           Margin="2,2,2,10" />
+                    <Image Source="phone.png"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           WidthRequest="32"
+                           HeightRequest="32" />
+                    <Entry Placeholder="Phone"
+                           Text="{Binding Contact.Phone, Mode=TwoWay}"
+                           Style="{StaticResource contactLabelStyle}"
+                           Keyboard="Numeric"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           Margin="2,2,2,2">
+                        <Entry.Behaviors>
+                            <Behaviors:MaskBehavior Mask="(XXX) XXX-XXXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Picker Title="Type"
+                            WidthRequest="90"
+                            HorizontalOptions="Start"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Margin="2,2,2,8"
+                            TextColor="#C6C6C6">
+                        <Picker.Items>
+                            <x:String>Personal</x:String>
+                            <x:String>Home</x:String>
+                            <x:String>School</x:String>
+                            <x:String>Company</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Image Source="mail.png"
+                           Grid.Row="5"
+                           Grid.Column="0"
+                           WidthRequest="32"
+                           HeightRequest="32" />
+                    <Entry Placeholder="Email"
+                           Text="{Binding Contact.Email}"
+                           Style="{StaticResource contactLabelStyle}"
+                           Grid.Row="5"
+                           Grid.Column="1" />
+                    <Picker Title="Personal"
+                            WidthRequest="90"
+                            HorizontalOptions="Start"
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="2,2,2,8"
+                            TextColor="#C6C6C6">
+                        <Picker.Items>
+                            <x:String>Personal</x:String>
+                            <x:String>Business</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Text="More Fields"
+                           TextColor="#3C7CBE"
+                           Grid.Row="7"
+                           Grid.Column="1" />
+                </Grid>
+                <!--<StackLayout Margin="4,8,4,8">
+
+                </StackLayout>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

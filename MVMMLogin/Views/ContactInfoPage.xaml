@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    x:Class="MVMMLogin.Views.ContactInfoPage"
+    xmlns:converter="clr-namespace:MVMMLogin.Converters">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <converter:FirstNameConverter x:Key="firstNameConverter"/>
+            <converter:LastNameConverter x:Key="lastNameConverter"/>
+            <converter:PhotoToPlaceholderConverter x:Key="photoToPlaceholderConverter"/>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <!--You can set an animation in the xaml file or in the csharp code behind-->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+    <StackLayout
+        BackgroundColor="White"
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand"
+        Padding="20, 20, 20, 20">
+        <Image Source="{Binding Contact.PhotoPath, Converter={StaticResource photoToPlaceholderConverter}}" />
+        <Label Text="{Binding Contact.Name, Converter={StaticResource firstNameConverter}} " />
+        <Label Text="{Binding Contact.LastName, Converter={StaticResource lastNameConverter}}" />
+        <Label Text="{Binding Contact.Email}" />
+        <Label
+            Text="{Binding Contact.Phone}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CallCommand}"
+                                      CommandParameter="{Binding Contact.Phone}"
+                                      NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="Edit">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding EditCommand}"
+                                      CommandParameter="{Binding Contact}"
+                                      NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Button Text="Close"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"
+                Command="{Binding PopPopupCommand}" />
+    </StackLayout>
+</pages:PopupPage>

@@ -39,7 +39,19 @@ namespace MVMMLogin.ViewModels
                 }
                 else
                 {
-                    await App.Current.MainPage.Navigation.PopToRootAsync(true);
+                    // Check if user already exists first
+                    var userExists = await App.Database.GetUserAsync(User.Email, User.Password);
+                    if (userExists == null)
+                    {
+                        await App.Database.SaveUserAsync(User);
+                        var user = await App.Database.GetUserAsync(User);
+                        await App.Current.MainPage.DisplayAlert("Register", "You have registered successfully", "Ok");
+                        await App.Current.MainPage.Navigation.PopToRootAsync(true);
+                    }
+                    else
+                    {
+                        SignupErrors = "An user with this username or email already exists.";
+                    }
                 }
             });
         }
