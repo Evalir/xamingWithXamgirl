@@ -11,6 +11,7 @@ This week's homework was really cool and made me read a lot about Xamarin in gen
 - Extension Methods: [see here](https://www.campusmvp.es/recursos/post/Metodos-de-Extension-en-C.aspx)
 - Messaging Center: [see here](https://www.youtube.com/watch?v=jEDxxtmfVZg)
 - [James Montemagno's Media Plugin](https://github.com/jamesmontemagno/MediaPlugin)
+- [Rg.Plugins.Popup for the contacts info](https://github.com/rotorgames/Rg.Plugins.Popup)
 - Fody for PropertyChanged
 - [And, how Pujols would say, ce finito.](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
