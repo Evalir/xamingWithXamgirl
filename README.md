@@ -12,6 +12,8 @@ This week's homework was really cool and made me read a lot about Xamarin in gen
 - Messaging Center: [see here](https://www.youtube.com/watch?v=jEDxxtmfVZg)
 - [James Montemagno's Media Plugin](https://github.com/jamesmontemagno/MediaPlugin)
 - [Rg.Plugins.Popup for the contacts info](https://github.com/rotorgames/Rg.Plugins.Popup)
+- Xamarin Forms Visual Material for theming
+- Styles in Resources
 - Fody for PropertyChanged
 - [And, how Pujols would say, ce finito.](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
