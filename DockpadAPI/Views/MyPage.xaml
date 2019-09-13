@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DockpadAPI.Converters"
+             x:Class="DockpadAPI.Views.MyPage"
+             Title="Moods">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:IntToMoodConverter x:Key="intToMood"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Moods, Mode=TwoWay}"
+                      HasUnevenRows="True"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Description, StringFormat='Description: {0}'}" />
+                                <Label Text="{Binding DayMood, Converter={StaticResource intToMood}}"
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding Date}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
