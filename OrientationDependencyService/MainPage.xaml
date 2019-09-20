@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OrientationDependencyService.MainPage"
+             xmlns:local="clr-namespace:OrientationDependencyService.CustomRenderers"
+             xmlns:local1="clr-namespace:OrientationDependencyService.Effects">
+    <StackLayout HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="Center">
+        <!-- Place new controls here -->
+        <Label x:Name="OrientationLabel"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+        <local:MyEntry Text="In Shared Code" />
+        <Entry Text="Effect on entry">
+            <Entry.Effects>
+                <local1:FocusEffect/>
+            </Entry.Effects>
+        </Entry>
+
+    </StackLayout>
+</ContentPage>
