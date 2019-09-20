@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPaint.Views.PaintPage"
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Clear"
+                        Clicked="OnClearClicked" />
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Load Image"
+                        Clicked="OnLoadClicked"/>
+                <Button Grid.Row="0"
+                        Grid.Column="2"
+                        Text="Save"
+                        Clicked="OnSaveClicked"/>
+                <Button Grid.Row="0"
+                        Grid.Column="3"
+                        Text="Undo"
+                        Clicked="OnUndoClicked" x:Name="UndoButton"/>
+                <Button Grid.Row="0"
+                        Grid.Column="4"
+                        Text="Redo"
+                        Clicked="OnRedoClicked" x:Name="RedoButton" />
+            </Grid>
+            <Grid HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="34*" />
+                </Grid.ColumnDefinitions>
+                <Button BackgroundColor="Red"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Clicked="OnColorClick" />
+                <Button BackgroundColor="Blue"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="OnColorClick" />
+                <Button BackgroundColor="Yellow"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Clicked="OnColorClick" />
+                <Button BackgroundColor="Green"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Clicked="OnColorClick" />
+                <Button BackgroundColor="Gray"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Clicked="OnColorClick" />
+                <Button BackgroundColor="Cyan"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Clicked="OnColorClick" />
+                <views:SKCanvasView x:Name="canvasView"
+                                    PaintSurface="OnPainting"
+                                    EnableTouchEvents="True"
+                                    Touch="OnTouch"
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="3"
+                                    VerticalOptions="FillAndExpand" />
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
