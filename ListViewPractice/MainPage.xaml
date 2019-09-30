@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewPractice.MainPage"
+             xmlns:converter="clr-namespace:ListViewPractice.Helpers">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ActiveConverter x:Key="activeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ListView ItemsSource="{Binding Users}"
+              x:Name="listv"
+              SelectedItem="{Binding SelectedUser, Mode=TwoWay}"
+              HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Menu" />
+                        <MenuItem Text="Delete"
+                                  Command="{Binding Path=BindingContext.DeleteElementCommand, Source={x:Reference listv}}"
+                                  CommandParameter="{Binding .}"
+                                  IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    <FlexLayout Direction="Row"
+                                JustifyContent="SpaceAround"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Margin="0, 12, 0, 12">
+                        <Image Source="{Binding Photo}"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Name}"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Center"
+                               FlexLayout.AlignSelf="Center" />
+                        <Label Text="{Binding Active, Converter={StaticResource activeConverter}}"
+                               HorizontalOptions="End"
+                               FlexLayout.AlignSelf="Center" />
+                    </FlexLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

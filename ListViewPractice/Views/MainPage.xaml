@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewPractice.MainPage"
+             xmlns:converter="clr-namespace:ListViewPractice.Helpers"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Users"
+             ios:Page.UseSafeArea="true"
+             ios:Page.LargeTitleDisplay="Always"
+             ios:Page.PrefersStatusBarHidden="True"
+             ios:NavigationPage.PrefersLargeTitles="True">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ActiveConverter x:Key="activeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ListView ItemsSource="{Binding Users}"
+              SelectedItem="{Binding SelectedUser, Mode=TwoWay}"
+              HasUnevenRows="True"
+              Footer="">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <FlexLayout Direction="Row"
+                                JustifyContent="SpaceAround"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Margin="0, 12, 0, 12">
+                        <Image Source="{Binding Photo}"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Name, StringFormat='User: {0}'}"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Center"
+                               Style="{StaticResource labelStyle}"
+                               FlexLayout.AlignSelf="Center" />
+                        <Label Text="{Binding Active, Converter={StaticResource activeConverter}}"
+                               HorizontalOptions="End"
+                               FlexLayout.AlignSelf="Center" />
+                    </FlexLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
